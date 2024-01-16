@@ -32,10 +32,10 @@
 ```
 npm install
 ```
-
   - Activate CORS
-  - [cors-anywhere.herokuapp.com](https://cors-anywhere.herokuapp.com)
-
+```
+https://cors-anywhere.herokuapp.com
+```
   - React + Vite
 ```
 npm run dev
