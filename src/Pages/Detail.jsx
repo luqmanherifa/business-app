@@ -9,8 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Loading from "../Components/Loading";
 
 function Detail() {
-  const API_KEY =
-    "Ubf1-f0uqsJUnssqPMGo-tiFeZTT85oFmKfznlPmjDtX8s83jYMoAb-ApuD63wgq6LDZNsUXG6gurZIVYaj2jzxJmmLdCdXbDqIHU_b6KiCEVi8v-YB0OSsW6MWaY3Yx";
+  const API_KEY = process.env.API_KEY;
 
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -21,7 +20,7 @@ function Detail() {
       if (id) {
         const options = {
           method: "GET",
-          url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/${id}`,
+          url: `https://api.yelp.com/v3/businesses/${id}`,
           headers: {
             accept: "application/json",
             Authorization: `Bearer ${API_KEY}`,

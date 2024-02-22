@@ -3,8 +3,7 @@ import { useEffect, useState } from "react";
 import Card from "../Card";
 
 function Business() {
-  const API_KEY =
-    "Ubf1-f0uqsJUnssqPMGo-tiFeZTT85oFmKfznlPmjDtX8s83jYMoAb-ApuD63wgq6LDZNsUXG6gurZIVYaj2jzxJmmLdCdXbDqIHU_b6KiCEVi8v-YB0OSsW6MWaY3Yx";
+  const API_KEY = process.env.API_KEY;
 
   const [businesses, setBusinesses] = useState([]);
 
@@ -12,7 +11,7 @@ function Business() {
     const fetchData = async () => {
       const options = {
         method: "GET",
-        url: "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search",
+        url: "https://api.yelp.com/v3/businesses/search",
         params: { location: "NYC", sort_by: "best_match", limit: "20" },
         headers: {
           accept: "application/json",
